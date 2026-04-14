@@ -74,8 +74,24 @@ with st.form(key="message_form", clear_on_submit=True):
     st.rerun()
 
 # Display messages
-if st.session_state.messages:
-    for m in reversed(st.session_state.messages[-10:]):  # Show last 10 messages
+records = sheet.get_all_records()
+
+if records:
+    for row in reversed(records[-10:]):  # last 10 messages
+        st.markdown(f"""
+            <div style='
+                background:white;
+                padding:12px;
+                border-radius:12px;
+                margin-bottom:10px;
+                box-shadow:0 2px 6px rgba(0,0,0,0.08);
+            '>
+                💬 {row['Message']}<br>
+                <small style='color:gray;'>🕒 {row['Time']}</small>
+            </div>
+        """, unsafe_allow_html=True)
+else:
+    st.info("No messages yet. Post the first message!")  # Show last 10 messages
         st.markdown(f"""
             <div style='
                 background:white;
