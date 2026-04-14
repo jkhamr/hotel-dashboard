@@ -1,6 +1,21 @@
 import streamlit as st
 import pandas as pd
 import datetime
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Connect to Google Sheets
+scope = ["https://spreadsheets.google.com/feeds",
+         "https://www.googleapis.com/auth/drive"]
+
+creds = ServiceAccountCredentials.from_json_keyfile_dict(
+    st.secrets["gcp_service_account"], scope
+)
+
+client = gspread.authorize(creds)
+
+# Open your sheet
+sheet = client.open("Hotel Message").sheet1
 
 # ✅ ONLY ONE, and AFTER imports
 st.set_page_config(
