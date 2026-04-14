@@ -68,6 +68,10 @@ with st.form(key="message_form", clear_on_submit=True):
     if submit_button and new_message:
     time_now = datetime.datetime.now().strftime("%I:%M %p")
 
+    sheet.append_row([new_message, time_now])
+
+    st.rerun()
+
     # Save to Google Sheet
     sheet.append_row([new_message, time_now])
 
