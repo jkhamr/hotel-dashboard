@@ -64,13 +64,13 @@ st.markdown("## 📢 Staff Messages")
 with st.form(key="message_form", clear_on_submit=True):
     new_message = st.text_input("Write a message", key="message_input")
     submit_button = st.form_submit_button("Post Message")
-    
+
     if submit_button and new_message:
-    time_now = datetime.datetime.now().strftime("%I:%M %p")
+        time_now = datetime.datetime.now().strftime("%I:%M %p")
 
-    sheet.append_row([new_message, time_now])
+        sheet.append_row([new_message, time_now])
 
-    st.rerun()
+        st.rerun()
 
     # Save to Google Sheet
 
