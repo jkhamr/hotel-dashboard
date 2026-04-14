@@ -66,11 +66,12 @@ with st.form(key="message_form", clear_on_submit=True):
     submit_button = st.form_submit_button("Post Message")
     
     if submit_button and new_message:
-        st.session_state.messages.append({
-            "text": new_message,
-            "time": datetime.datetime.now().strftime("%I:%M %p")
-        })
-        st.rerun()
+    time_now = datetime.datetime.now().strftime("%I:%M %p")
+
+    # Save to Google Sheet
+    sheet.append_row([new_message, time_now])
+
+    st.rerun()
 
 # Display messages
 if st.session_state.messages:
