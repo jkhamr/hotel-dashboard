@@ -92,14 +92,6 @@ if records:
         """, unsafe_allow_html=True)
 else:
     st.info("No messages yet. Post the first message!")  # Show last 10 messages
-        st.markdown(f"""
-            <div style='
-                background:white;
-                padding:12px;
-                border-radius:12px;
-                margin-bottom:10px;
-                box-shadow:0 2px 6px rgba(0,0,0,0.08);
-            '>
                 💬 {m['text']}<br>
                 <small style='color:gray;'>🕒 {m['time']}</small>
             </div>
