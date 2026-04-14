@@ -73,9 +73,6 @@ with st.form(key="message_form", clear_on_submit=True):
     st.rerun()
 
     # Save to Google Sheet
-    sheet.append_row([new_message, time_now])
-
-    st.rerun()
 
 # Display messages
 records = sheet.get_all_records()
