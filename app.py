@@ -91,11 +91,7 @@ if records:
             </div>
         """, unsafe_allow_html=True)
 else:
-    st.info("No messages yet. Post the first message!")  # Show last 10 messages
-                💬 {m['text']}<br>
-                <small style='color:gray;'>🕒 {m['time']}</small>
-            </div>
-        """, unsafe_allow_html=True)
+    st.info("No messages yet. Post the first message!")
 else:
     st.info("No messages yet. Post the first message!")
 
