@@ -237,11 +237,11 @@ with tabs[3]:
     
     staff_df = pd.DataFrame([
         {"staff": "Maria", "role": "Housekeeping", "shift": "Morning"},
-        {"staff": "alex", "role": "Housekeeping", "shift": "Evening"},
-        {"staff": "priya", "role": "Front Desk", "shift": "Morning"},
-        {"staff": "Noah", "role": "Maintenance", "shift": "Night"},
-        {"staff": "Ava", "role": "Housekeeping", "shift": "Morning"},
-        {"staff": "Maya", "role": "Housekeeping", "shift": "Evening"},
+        {"staff": "alex", "role": "Housekeeping", "shift": "morning"},
+        {"staff": "jeenal", "role": "Front Desk", "shift": "Morning"},
+        {"staff": "theo", "role": "Maintenance", "shift": "Night"},
+        {"staff": "marlyn", "role": "Housekeeping", "shift": "Morning"},
+        {"staff": "yolanda", "role": "Frontdesk", "shift": "Evening"},
     ])
     
     st.dataframe(
